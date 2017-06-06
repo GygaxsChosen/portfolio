@@ -15,8 +15,6 @@ namespace sort
             int temp;
             temp=Prompt("How many random numbers would you like to generate ? ");
            int[] Num= GenNum(temp);
-            var stopwatch = new Stopwatch();
-            Stopwatch.StartNew();
             BubbleSort(Num);
             Console.ReadLine();
 
@@ -50,9 +48,21 @@ namespace sort
 
 
         }
+        public static void MergeSort(int[] A) // WIP
+        {
+            if (A.Length % 2 == 0)
+            {
+                for (int x = 0; x < A.Length; x++)
+                {
+
+                }
+            }
+        }
 
         public static void BubbleSort(int[] A)
-        {
+{
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             int count = 1;
 
             while (count != 0)
@@ -69,7 +79,7 @@ namespace sort
                     temp = A[x + 1];
                     A[x + 1] = A[x];
                     A[x] = temp;
-                        Console.WriteLine("Swap");
+                        
 
 
                 }
@@ -81,12 +91,13 @@ namespace sort
                 Console.Write(x);
                 Console.Write(" ");
             }
-                
 
+            stopwatch.Stop();
+         
 
-          
-            
-
-        }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(stopwatch.Elapsed);
+}
     }
 }
