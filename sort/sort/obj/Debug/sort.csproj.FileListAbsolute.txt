@@ -1,0 +1,6 @@
+C:\Users\Jonathan\Desktop\sort\sort\bin\Debug\sort.exe.config
+C:\Users\Jonathan\Desktop\sort\sort\obj\Debug\sort.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Desktop\sort\sort\bin\Debug\sort.exe
+C:\Users\Jonathan\Desktop\sort\sort\bin\Debug\sort.pdb
+C:\Users\Jonathan\Desktop\sort\sort\obj\Debug\sort.exe
+C:\Users\Jonathan\Desktop\sort\sort\obj\Debug\sort.pdb
