@@ -333,9 +333,9 @@
             this.LblTotal.AutoSize = true;
             this.LblTotal.Location = new System.Drawing.Point(287, 472);
             this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(31, 13);
+            this.LblTotal.Size = new System.Drawing.Size(13, 13);
             this.LblTotal.TabIndex = 23;
-            this.LblTotal.Text = "Total";
+            this.LblTotal.Text = "0";
             this.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PizzaOrderForm
