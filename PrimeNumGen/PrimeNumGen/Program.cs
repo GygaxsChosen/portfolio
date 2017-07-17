@@ -26,7 +26,8 @@ namespace PrimeNumGen
                     {
                         Console.WriteLine(start);
                     }
-                    Console.ReadKey();
+                    
+                   Console.ReadKey();
                 }
 
             }
