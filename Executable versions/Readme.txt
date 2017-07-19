@@ -1,1 +1,0 @@
-These versions of programs are built as full executeable versions, so they can be run as is without having an IDE installed
