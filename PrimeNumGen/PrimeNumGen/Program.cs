@@ -10,6 +10,8 @@ namespace PrimeNumGen
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("This program will generate an infinite list of prime numbers and will do so fairly quickly... Press anykey to begin");
+            Console.Read();
 
             double start = 3;
 
@@ -27,7 +29,7 @@ namespace PrimeNumGen
                         Console.WriteLine(start);
                     }
                     
-                   Console.ReadKey();
+                   
                 }
 
             }
