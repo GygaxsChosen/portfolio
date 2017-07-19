@@ -1,0 +1,1 @@
+This program is intended to perform a mathmatical operation to generate an infinite list of prime numbers. IT is fairly ineffecient and more or less brute forces its way, but it does operate as intended

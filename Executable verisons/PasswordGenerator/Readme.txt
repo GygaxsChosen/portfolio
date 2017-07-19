@@ -1,0 +1,1 @@
+This program generates Strong Passwords, from given user input parameters.

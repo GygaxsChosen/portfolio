@@ -1,0 +1,1 @@
+Beta Version of a clone of the board game mastermind, Gameplay works the same as the traditional game with a random sequence of colors being selected by the computer, and the user tries to logically guess that sequence using feedback from the computer as to correct colors, and color positions.
