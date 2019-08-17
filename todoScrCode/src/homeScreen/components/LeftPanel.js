@@ -13,76 +13,98 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import CreateIcon from '@material-ui/icons/Create';
+import {StyledPaper} from '../../../src/homeScreen/components/StyledPaper'
+import LoginCard from '../../../src/LoginScreen/LoginCard'
+import UserAvatar from "../../UserAvatarBar/components/UserAvatar";
 
-const drawerWidth = 240;
+export default class PermanentDrawerLeft extends React.Component {
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-    },
-    appBar: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-    },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-    },
-    drawerPaper: {
-        width: drawerWidth,
-    },
-    toolbar: theme.mixins.toolbar,
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-    },
-}));
+    constructor(props) {
+        super(props);
+        this.state = {
+            renderPaper: false,
+            UserLoggedIn: false,
+            username:''
+        };
+
+        this.handleNewToDo = this.handleNewToDo.bind(this);
+        this.pullUpRenderStatus =this.pullUpRenderStatus.bind(this);
+        this.handleLogin =this.handleLogin.bind(this);
+    }
+
+    handleNewToDo(){
+
+        this.setState({renderPaper: true})
+    }
+
+    pullUpRenderStatus(){
+        this.setState({renderPaper: false})
+    }
+    handleLogin(user){
+        this.setState({UserLoggedIn:true, userName: user})
+    }
+
+    render() {
+        const {classes} =this.props
+        return (
+            <div>
+                {!this.state.UserLoggedIn &&
+                <div className="">
+                    <LoginCard handleLogin={this.handleLogin}/>
+                </div>
+                }
 
 
-export default function PermanentDrawerLeft() {
-    const classes = useStyles();
+                {this.state.UserLoggedIn &&
+                <div className={classes.root}>
+                    <CssBaseline />
+                    <AppBar position="fixed" className={classes.appBar}>
+                        <Toolbar>
+                            <Typography variant="h6" noWrap>
+                                To-do list
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
 
-    return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
-                    <Typography variant="h6" noWrap>
-                        To-do list
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                className={classes.drawer}
-                variant="permanent"
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-                anchor="left"
-            >
-                <div className={classes.toolbar} />
-                <Divider />
-                <List>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <CreateIcon/>
-                            <ListItemText primary='new note'/>
-                        </ListItemIcon>
-                    </ListItem>
+                    <Drawer
+                        className={classes.drawer}
+                        variant="permanent"
+                        classes={{
+                            paper: classes.drawerPaper,
+                        }}
+                        anchor="left"
+                    >
+                        <div className={classes.toolbar} />
+                        <UserAvatar/>
+                        <Divider />
 
-                </List>
-                <Divider />
-            </Drawer>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <Typography paragraph>
-             <div>
+                        <List>
+                            <ListItem button onClick={this.handleNewToDo} >
+                                <ListItemIcon>
+                                    <CreateIcon/>
+                                    <ListItemText primary='New Item To-Do' />
+                                </ListItemIcon>
+                            </ListItem>
 
-             </div>
-                </Typography>
+                        </List>
+                        <Divider />
+                    </Drawer>
+                    <main className={classes.content}>
+                        <div className={classes.toolbar} />
+                        <Typography paragraph>
+                            <div>
+                                <StyledPaper renderPaper={this.state.renderPaper} pullUpRenderStatus={this.pullUpRenderStatus}/>
+                            </div>
+                        </Typography>
 
-            </main>
-        </div>
-    );
+                    </main>
+                </div>
+                }
+
+            </div>
+
+        );
+    }
+
+
 }

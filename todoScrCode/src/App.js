@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import LeftPanel from './homeScreen/components/LeftPanel.js'
+import StyledComponents from './homeScreen/components/StyledPanel'
 
 class App extends React.Component {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div >
 
-        <LeftPanel
+        <StyledComponents
         />
       </div>
   );
