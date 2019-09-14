@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import StyledComponents from './homeScreen/components/StyledPanel'
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
 class App extends React.Component {
 
@@ -10,12 +11,15 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
+        <FirebaseDatabaseProvider>
       <div >
 
         <StyledComponents
         />
       </div>
+        </FirebaseDatabaseProvider>
   );
   }
 

@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     textField: {
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
-        width: 1600,
+        width: 200,
     },
     dense: {
         marginTop: 19,
@@ -33,8 +33,11 @@ export const StyledPaper= (props)=>{
     const classes = useStyles();
 
     return <PaperSheet
+        unrenderMainPanel={props.unrenderMainPanel}
+        user={props.user}
         classes={classes}
         renderPaper={props.renderPaper}
+        database={props.database}
         pullUpRenderStatus={props.pullUpRenderStatus}
     />
 }

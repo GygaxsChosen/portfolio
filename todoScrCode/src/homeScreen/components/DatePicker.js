@@ -22,6 +22,8 @@ import {
             <Grid container >
                 <KeyboardDatePicker
                     disableToolbar
+                    defaultValue
+
                     variant="inline"
                     format="MM/dd/yyyy"
                     margin="none"

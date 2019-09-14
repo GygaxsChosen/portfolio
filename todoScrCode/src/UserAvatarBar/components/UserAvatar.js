@@ -10,16 +10,17 @@ const useStyles = makeStyles({
         margin: 10,
         color: '#fff',
         backgroundColor: deepPurple[500],
-        cursor: 'pointer'
+        cursor: 'pointer',
+        aligncontent: 'center',
     },
 });
 
-export default function UserAvatar() {
+export default function UserAvatar(props) {
     const classes = useStyles();
 
     return (
         <Grid container justify="center" alignItems="center">
-            <Avatar className={classes.purpleAvatar}>G</Avatar>
+            <Avatar src= {props.profilePic} className={classes.purpleAvatar}>G</Avatar>
         </Grid>
     );
 }

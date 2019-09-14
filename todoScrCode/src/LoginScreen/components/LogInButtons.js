@@ -17,8 +17,8 @@ export const  LogInButtons=(props)=> {
 
     return (
         <div>
-            <Button variant="contained" color="primary" className={classes.button}>
-                Login
+            <Button variant="contained" color="primary" className={classes.button} onClick={props.handleAccountCreation}>
+                Login with Google
             </Button>
             <Button variant="contained" color="secondary" className={classes.button} onClick={props.handleGuestClick}>
                 Continue as Guest

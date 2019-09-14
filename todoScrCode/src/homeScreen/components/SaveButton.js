@@ -32,6 +32,7 @@ export const SaveButton=(props)=> {
                 <SaveIcon className={clsx(classes.leftIcon, classes.iconSmall)} />
                 Save
             </Button>
+            <Button onClick={props.unrenderMainPanel}>Close</Button>
         </div>
     );
 }
